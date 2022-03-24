@@ -8,9 +8,8 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-apikey = os.environ["AHdgFjFa4jPrE0EObvDOSrg_HAZ-ThGWptXQEi7e7Ifu"]
-url = os.environ[
-    'https://api.us-south.language-translator.watson.cloud.ibm.com/instances/8f1a183b-beee-4530-b890-26db29dcc85d']
+apikey = os.environ[{"apikey"}]
+url = os.environ[{"url"}]
 
 authenticator = IAMAuthenticator('AHdgFjFa4jPrE0EObvDOSrg_HAZ-ThGWptXQEi7e7Ifu')
 language_translator = LanguageTranslatorV3(version='2018-05-01', authenticator=authenticator)
@@ -23,7 +22,7 @@ def english_to_french(text1):
     translates english text to French
     """
     french_text = language_translator.translate(source='en', text=text1,  model_id='en-fr').get_result()
-    return french_text.get("translated")[0].get("translation")
+    return french_text.get("translated")[0].get('translation')
 
 
 def french_to_english(text1):
@@ -31,4 +30,4 @@ def french_to_english(text1):
     translates French text to english
     """
     english_text = language_translator.translate(source='fr', text=text1, model_id='fr-en').get_result()
-    return english_text.get("translate")[0].get("translation")
+    return english_text.get("translate")[0].get('translated')
