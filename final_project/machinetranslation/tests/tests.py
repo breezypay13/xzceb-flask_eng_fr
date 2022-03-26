@@ -1,6 +1,6 @@
 import unittest
 
-from venv import french_to_english, english_to_french
+from machinetranslation.translator import french_to_english, english_to_french
 
 null = ''
 
