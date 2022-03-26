@@ -21,13 +21,13 @@ def english_to_french(text1):
     """
     translates english text to French
     """
-    french_text = language_translator.translate(source='en', text=text1,  model_id='en-fr').get_result()
-    return french_text.get("translated")[0].get('translation')
+    french_text = language_translator.translate(text=text1,  model_id='en-fr').get_result()
+    return french_text.get("translations")[0].get('translation')
 
 
 def french_to_english(text1):
     """
     translates French text to english
     """
-    english_text = language_translator.translate(source='fr', text=text1, model_id='fr-en').get_result()
-    return english_text.get("translate")[0].get('translated')
+    english_text = language_translator.translate(text=text1, model_id='fr-en').get_result()
+    return english_text.get("translations")[0].get('translation')

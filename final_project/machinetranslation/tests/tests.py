@@ -1,6 +1,5 @@
 import unittest
 
-from machinetranslation.translator import french_to_english, english_to_french
 
 null = ''
 
