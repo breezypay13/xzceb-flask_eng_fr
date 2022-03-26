@@ -1,10 +1,9 @@
 """creating an instance of the IBM watson language translator"""
 
 import json
-
+import os
 from ibm_watson import LanguageTranslatorV3
 from ibm_cloud_sdk_core.authenticators import IAMAuthenticator
-import os
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -23,7 +22,7 @@ def english_to_french(english_text):
     translates english text to French
     """
     translation = language_translator.translate(text=english_text, model_id='en-fr').get_result()
-    french_text = translation.get("translations")[0].get('translation')
+    french_text = translation["translations"][0]['translation']
     return french_text
 
 
@@ -32,5 +31,5 @@ def french_to_english(french_text):
     translates French text to english
     """
     translation = language_translator.translate(text=french_text, model_id='fr-en').get_result()
-    english_text = translation.get("translations")[0].get('translation')
+    english_text = translation["translations"][0]['translation']
     return english_text

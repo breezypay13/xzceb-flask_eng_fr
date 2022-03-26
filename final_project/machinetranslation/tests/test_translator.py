@@ -6,21 +6,21 @@ null = ''
 
 
 class TestTranslator(unittest.TestCase):
-    def test_french_to_english(self):
+    def test_f2e(self):
         b = 'Bonjour'
         self.assertEqual(french_to_english(b), 'Hello')
-
-        self.assertNotEqual(french_to_english(b), 'Goodbye')
-
         pass
+        self.assertNotEqual(french_to_english(b), 'Goodbye')
+        pass
+        self.assertNotEqual(french_to_english('Null'), '')
 
-    def test_english_to_french(self):
+    def test_e2f(self):
         h = 'Hello'
         self.assertEqual(english_to_french(h), 'Bonjour')
-
+        pass
         self.assertNotEqual(english_to_french(h), 8)
-
-    pass
+        pass
+        self.assertNotEqual(english_to_french('Null'), '')
 
 
 if __name__ == "__main__":
